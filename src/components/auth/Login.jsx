@@ -59,13 +59,15 @@ const Login = () => {
 			validationSchema={validationSchema}
 			onSubmit={handleSubmit}>
 
-				<Form className="border-[#d52b00] text-black text-lg border-4 rounded-md shadow-md flex flex-col justify-start items-start p-2 md:p-5 gap-5 space-y-3 mt-10">
+				<Form className="border-[#d52b00] text-white text-lg border-4 rounded-md shadow-md flex flex-col justify-start items-start p-2 md:p-5 gap-5 space-y-3 mt-10">
 					<h1 className="text-xl tracking-widest p-1 uppercase ">Login</h1>
-					<Field type="email" className="fields" placeholder="Enter your email" name="email"/>
+					<p className="text-lg tracking-widest p-1 text-white">Email : miirshe@gmail.com</p>
+					<p className="text-lg tracking-widest p-1 text-white">Password : Test1234</p>
+					<Field type="email" className="fields text-black" placeholder="Enter your email" name="email"/>
 					<ErrorMessage className="text-red-500" component="div" name="email"/>
 					<div className=" w-full relative">
                 <Field
-                  className="fields"
+                  className="fields text-black"
                   type={type}
                   placeholder="Enter Password "
                   name="password"

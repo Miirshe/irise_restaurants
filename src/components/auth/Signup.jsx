@@ -55,14 +55,14 @@ const Signup = () => {
 
 				<Form className="border-[#d52b00] text-black text-lg border-4 rounded-md shadow-md flex flex-col justify-start items-start p-2 md:p-5 gap-5 space-y-3 mt-10">
 					<h1 className="text-xl tracking-widest p-1 uppercase ">SignUp</h1>
-					<Field type="text" className="fields" placeholder="Enter your username" name="username"/>
+					<Field type="text" className="fields text-black" placeholder="Enter your username" name="username"/>
 					<ErrorMessage className="text-red-500" component="div" name="username"/>
-					<Field type="email" className="fields" placeholder="Enter your email" name="email"/>
+					<Field type="email" className="fields text-black" placeholder="Enter your email" name="email"/>
 					<ErrorMessage className="text-red-500" component="div" name="email"/>
 					<div className="w-full space-y-4">
 					<div className=" w-full relative">
                 <Field
-                  className="fields"
+                  className="fields text-black"
                   type={type}
                   placeholder="Enter Password "
                   name="password"

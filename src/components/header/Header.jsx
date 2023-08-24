@@ -76,7 +76,10 @@ const Header = () => {
 			<Link className=" text-xl cursor-pointer font-bold capitalize " to='/Menu'>Menu</Link>
 			<Link className=" text-xl cursor-pointer font-bold capitalize " to='/Contact'>Contact</Link>
 			<Link className=" text-xl cursor-pointer font-bold capitalize " to='/About'>About</Link>
-			<Link className=" text-xl cursor-pointer font-bold capitalize " to='/Login'>Login</Link>
+			{
+				!auths && <Link className=" text-xl cursor-pointer font-bold capitalize " to='/Login'>Login</Link>
+			}
+			
 			<Link className=" relative text-xl cursor-pointer font-bold capitalize " to='/Carts'><PiShoppingCartSimpleLight size={30}/> <span className="text-white  absolute top-0 left-10">{recipe?.length}</span></Link>
 			{
 			

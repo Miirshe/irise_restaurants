@@ -5,9 +5,12 @@ import * as Yup from 'yup'
 import { auth } from "../lib/Firebase"
 import Cookies from "js-cookie"
 import { useEffect, useState } from "react"
+import { FiEye, FiEyeOff } from "react-icons/fi";
+
 const Login = () => {
 
 	const navigate = useNavigate();
+	const [type, setType] = useState("password");
 
 	const [ users , setUsers ] = useState([]);
 
@@ -60,10 +63,36 @@ const Login = () => {
 					<h1 className="text-xl tracking-widest p-1 uppercase ">Login</h1>
 					<Field type="email" className="fields" placeholder="Enter your email" name="email"/>
 					<ErrorMessage className="text-red-500" component="div" name="email"/>
-					<div className="w-full space-y-4">
-					<Field type="password" className="fields" placeholder="Enter your email" name="password"/>
-					<ErrorMessage className="text-red-500" component="div" name="password"/>
-					</div>
+					<div className=" w-full relative">
+                <Field
+                  className="fields"
+                  type={type}
+                  placeholder="Enter Password "
+                  name="password"
+                />
+                {type === "password" ? (
+                  <span
+                    className=" absolute top-[1rem] z-10 right-5 cursor-pointer"
+                    onClick={() => setType("text")}
+                  >
+                    {" "}
+                    <FiEyeOff />{" "}
+                  </span>
+                ) : (
+                  <span
+                    className=" absolute top-[1rem] z-10 right-5 cursor-pointer"
+                    onClick={() => setType("password")}
+                  >
+                    {" "}
+                    <FiEye />{" "}
+                  </span>
+                )}
+                <ErrorMessage
+                  component="div"
+                  name="password"
+                  className="text-red-500"
+                />
+              </div>
 					<button className="btn" type="submit">Login</button>
 					<p>Have to register <Link className="text-xl tracking-widest p-1 uppercase underline" to="/Signup">Signup</Link></p>
 				</Form>

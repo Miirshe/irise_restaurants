@@ -4,8 +4,12 @@ import { Link, useNavigate } from "react-router-dom"
 import * as Yup from 'yup'
 import { auth} from "../lib/Firebase"
 import { toast } from "react-toastify"
+import { FiEye, FiEyeOff } from "react-icons/fi";
+import { useState } from "react"
+
 
 const Signup = () => {
+	const [type, setType] = useState("password");
 	const navigate = useNavigate();
 	const initialValues = {
 		username : '',
@@ -56,7 +60,36 @@ const Signup = () => {
 					<Field type="email" className="fields" placeholder="Enter your email" name="email"/>
 					<ErrorMessage className="text-red-500" component="div" name="email"/>
 					<div className="w-full space-y-4">
-					<Field type="password" className="fields" placeholder="Enter your email" name="password"/>
+					<div className=" w-full relative">
+                <Field
+                  className="fields"
+                  type={type}
+                  placeholder="Enter Password "
+                  name="password"
+                />
+                {type === "password" ? (
+                  <span
+                    className=" absolute top-[1rem] z-10 right-5 cursor-pointer "
+                    onClick={() => setType("text")}
+                  >
+                    {" "}
+                    <FiEyeOff />{" "}
+                  </span>
+                ) : (
+                  <span
+                    className=" absolute top-[1rem] z-10 right-5 cursor-pointer"
+                    onClick={() => setType("password")}
+                  >
+                    {" "}
+                    <FiEye />{" "}
+                  </span>
+                )}
+                <ErrorMessage
+                  component="div"
+                  name="password"
+                  className="text-red-500"
+                />
+              </div>
 					<ErrorMessage className="text-red-500" component="div" name="password"/>
 					</div>
 					<button className="btn" type="submit">Signup</button>

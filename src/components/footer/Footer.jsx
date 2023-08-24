@@ -16,9 +16,9 @@ const Footer = () => {
 			</div>
 
 			<div className="mt-16 p-2 flex-row justify-center items-center gap-5 space-x-5">
-				<Link to="https://github.com/Miirshe"><AiOutlineGithub className="inline text-black transition-all ease-in-out hover:text-white " size={30}/></Link>
-				<Link to="https://www.linkedin.com/in/miirshe"><AiOutlineLinkedin className="inline text-black transition-all ease-in-out hover:text-white " size={30}/></Link>
-				<Link to=""><SiLinktree  className="inline text-black transition-all ease-in-out hover:text-white " size={30}/></Link>
+				<Link to="https://github.com/Miirshe" target="_blank"><AiOutlineGithub className="inline text-black transition-all ease-in-out hover:text-white " size={30}/></Link>
+				<Link to="https://www.linkedin.com/in/miirshe" target="_blank"><AiOutlineLinkedin className="inline text-black transition-all ease-in-out hover:text-white " size={30}/></Link>
+				<Link to="https://linktr.ee/miirshe" target="_blank"><SiLinktree  className="inline text-black transition-all ease-in-out hover:text-white " size={30}/></Link>
 			</div>
 			<p className="text-xl tracking-widest text-center w-full">&copy; 2023 Irise Fast Food All Rights Reserved. Terms of use and Privacy Policy.</p>
 		</div>

@@ -5,19 +5,33 @@ import {SearchBar} from '../index'
 import { useRecipe } from '../Reducer/RecipeContext';
 import Cookies from 'js-cookie';
 import { auth } from '../lib/Firebase';
+const url = 'https://www.themealdb.com/api/json/v1/1/categories.php';
 const Menu = () => {
-	const { add_recipe , recipe} = useRecipe();
-	console.log("recipe carts",recipe);
+	const { add_recipe } = useRecipe();
 	const [ menu , setMenu ] = useState([]);
 	const [ searchBar , setSearchBar] = useState('')
 	const [ auths , setAuths ] = useState(false);
-	useEffect(() => {
-		const fetchMenu =  async() => {
-			const {data} = await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
-			setMenu(data?.categories)
-		}
+	// useEffect(() => {
+	// 	const fetchMenu =  async() => {
+	// 		const {data} = await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
+	// 		setMenu(data?.categories)
+	// 	}
 
-		return () => fetchMenu();
+	// 	return () => fetchMenu();
+	// },[])
+
+	useEffect(() =>{
+		const fetch_categories = async () => {
+			try {
+				const response = await fetch(url);
+			    const data = await response.json()
+			    setMenu(data?.categories)
+				
+			} catch (error) {
+				console.log(error);
+			}
+		}
+		return () => fetch_categories();
 	},[])
 
 
@@ -25,8 +39,6 @@ const Menu = () => {
 		const recipe = menu?.filter(recipe => {
 			return recipe.idCategory === id
 		})
-		console.log("recipe",recipe);
-
 		add_recipe(recipe)
 	}
 

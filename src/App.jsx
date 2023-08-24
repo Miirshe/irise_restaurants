@@ -1,4 +1,4 @@
-import { About, Carts, Contact, Footer, Header, Home, Login, Menu, Signup } from './components/index';
+import { About, Carts, Contact, Footer, Header, Home, Login, Menu, Opps, Signup } from './components/index';
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
@@ -23,6 +23,7 @@ const App = () => {
       </Route>
       <Route path='/Login' element={<Login/>}/>
       <Route path='/Signup' element={<Signup/>}/>
+      <Route path='*' element={<Opps/>}/>
 
     </Routes>
     <Footer/>

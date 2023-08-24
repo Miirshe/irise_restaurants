@@ -11,28 +11,27 @@ const Menu = () => {
 	const [ menu , setMenu ] = useState([]);
 	const [ searchBar , setSearchBar] = useState('')
 	const [ auths , setAuths ] = useState(false);
-	// useEffect(() => {
-	// 	const fetchMenu =  async() => {
-	// 		const {data} = await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
-	// 		setMenu(data?.categories)
-	// 	}
-
-	// 	return () => fetchMenu();
-	// },[])
-
-	useEffect(() =>{
-		const fetch_categories = async () => {
-			try {
-				const response = await fetch(url);
-			    const data = await response.json()
-			    setMenu(data?.categories)
-				
-			} catch (error) {
-				console.log(error);
-			}
+	useEffect(() => {
+		const fetchMenu =  async() => {
+			const {data} = await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
+			setMenu(data?.categories)
 		}
-		return () => fetch_categories();
+		fetchMenu();
 	},[])
+
+	// useEffect(() =>{
+	// 	const fetch_categories = async () => {
+	// 		try {
+	// 			const response = await fetch(url);
+	// 		    const data = await response.json()
+	// 		    setMenu(data?.categories)
+
+	// 		} catch (error) {
+	// 			console.log(error);
+	// 		}
+	// 	}
+	// 	return () => fetch_categories();
+	// },[])
 
 
 	const handleRecipes = (id) => {

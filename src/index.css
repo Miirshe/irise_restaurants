@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+    body {
+        @apply bg-[#020100] text-[#babdc1]
+    }
+}
+
+@layer components {
+    .fields {
+        @apply p-3 rounded-md w-full shadow-md
+    }
+    .btn {
+        @apply p-3 rounded-md w-full shadow-md bg-[#d52b00] text-white
+    }
+}

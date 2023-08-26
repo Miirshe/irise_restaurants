@@ -1,8 +1,7 @@
-# React + Vite
+Irise_restaurants Fast Food
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ires_restaurents is a a website of SPA and also has some features like order , total price , filter categories this beauty website buildin react js , firebase tailwind
 
-Currently, two official plugins are available:
+![Screenshot 2023-08-26 093217](https://github.com/Miirshe/irise_restaurants/assets/126691024/8b6ee476-1e8f-485c-af0e-2086513ffea2)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
